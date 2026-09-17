@@ -10,6 +10,7 @@ import io
 import os
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 import coverage_core as cc
 
@@ -69,9 +70,10 @@ elif use_example and os.path.exists(SAMPLE_CSV):
         inputs = [("eGFP_25C.csv", fh.read())]
 
 if not inputs:
+    example_hint = " (or tick **Use example data**)" if has_example else ""
     st.info(
-        "👈 Upload a BioPharma Finder oligonucleotide-mapping export to begin "
-        "(or tick **Use example data**).\n\n"
+        f"👈 Upload a BioPharma Finder oligonucleotide-mapping export to begin"
+        f"{example_hint}.\n\n"
         "Expected columns: **Positions** (start-end), **Conf. Score**, **MS Area**, "
         "and an **Oligo** / target-name column. Extra columns are ignored."
     )
@@ -176,7 +178,6 @@ with tab_data:
                        f">{s.name}_{s.target_name}\n{seq}\n".encode(),
                        f"{s.name}_reconstructed.fasta", "text/plain")
 
-    import numpy as np
     perpos = pd.DataFrame({
         "position": np.arange(1, s.length + 1),
         "base": list(seq),

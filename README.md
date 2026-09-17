@@ -1,5 +1,9 @@
 # 🧬 Sequence Coverage Tool
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sequence-coverage-tool.streamlit.app/)
+
+**🔗 Live app: [sequence-coverage-tool.streamlit.app](https://sequence-coverage-tool.streamlit.app/)**
+
 A [Streamlit](https://streamlit.io/) app that turns a **BioPharma Finder**
 oligonucleotide-mapping export into sequence-coverage visualisations —
 **computed directly from the numbers**, with no image processing, no pixel
@@ -52,11 +56,13 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Deploy it
+## Deploy / update
 
-Push this folder to a GitHub repo and deploy on
-[Streamlit Community Cloud](https://share.streamlit.io/) (`app.py` as the entry
-point) — the same way the Plasmid Shredder is hosted.
+This repo is deployed on [Streamlit Community Cloud](https://share.streamlit.io/)
+from the `main` branch (`app.py` as the entry point), live at
+**[sequence-coverage-tool.streamlit.app](https://sequence-coverage-tool.streamlit.app/)**.
+Any push to `main` **auto-redeploys** the live app within a minute or two — no
+manual redeploy step.
 
 ## Notes
 
